@@ -10,4 +10,14 @@ function View(counter){
 }
 
 
+function update(msg, counter){
+    if (msg === "+")
+        return (counter + 1);
+    
+    else{
+        return (counter - 1);
+    }
+}
+
+
 console.log(View(51));
