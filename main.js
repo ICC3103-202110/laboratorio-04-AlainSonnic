@@ -1,23 +1,28 @@
 /*empezando el lab*/
 
-/*
-const prompt = require('prompt-sync')();
-let name = prompt("Enter your name: ");
-console.log(`Hello ${name}`) */
 
 function View(counter){
-    return ('Count = '+counter);
+    return (counter);
 }
-
 
 function update(msg, counter){
     if (msg === "+")
-        return (counter + 1);
+        return (counter += 1);
     
-    else{
-        return (counter - 1);
+    if (msg === "-")
+        return (counter -= 1);
+}
+
+function app(counter){
+    while (true) {
+        const currentView = View(counter);
+        console.clear()
+        console.log("Count = ",View(currentView));
+        const prompt = require('prompt-sync')();
+        const msg = prompt("What would you do ? :  ");
+        counter = update(msg, counter);
     }
 }
 
-
-console.log(View(51));
+app(0)
+console.log(app());
