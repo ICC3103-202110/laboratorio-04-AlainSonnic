@@ -18,6 +18,8 @@ function app(counter){
         const currentView = View(counter);
         console.clear()
         console.log("Count = ",View(currentView));
+        console.log("\n");
+        console.log("(+) or (-)");
         const prompt = require('prompt-sync')();
         const msg = prompt("What would you do ? :  ");
         counter = update(msg, counter);
